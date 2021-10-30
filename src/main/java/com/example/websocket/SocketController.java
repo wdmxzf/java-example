@@ -39,6 +39,18 @@ public class SocketController {
     // http://localhost:8181/connection/socket1
     @RequestMapping("/socket1")
     public String connectSocket1() throws IOException, DeploymentException {
+        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+        ClientEndpointConfig clientEndpointConfig = ClientEndpointConfig.Builder
+                .create().configurator(new ClientEndpointConfig.Configurator(){
+                    @Override
+                    public void beforeRequest(Map<String, List<String>> headers) {
+                        super.beforeRequest(headers);
+                        List<String> values = new ArrayList<String>();
+                        values.add("v");
+                        headers.put("k",values);
+                    }
+                }).build();
+        Session session = container.connectToServer(WebSocketClient.class, clientEndpointConfig, URI.create("ws://localhost:8181/websocket/server1"));
         return "connection successful";
     }
 
