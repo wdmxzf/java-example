@@ -137,7 +137,7 @@ public class WebSocketClient extends Endpoint {
         clientEndpointConfig.getUserProperties().put(SSL_CONTEXT_PROPERTY, sslContext);
 
 ```
-> x509ExtendedTrustManager 必须是 com.sun.net.ssl.internal.ssl.X509ExtendedTrustManager 下的包。
+> x509ExtendedTrustManager 必须是 `javax.net.ssl.X509ExtendedTrustManager` 下的包。
 
 ## 连接后Log 信息
 ```
