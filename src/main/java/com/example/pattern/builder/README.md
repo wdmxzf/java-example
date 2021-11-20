@@ -8,7 +8,7 @@
 ## 特性
 * 方便用户创建复杂对象
 * 代码复用性、封装性（将对象构建过程和细节进行封装、复用）
-*参考（https://blog.csdn.net/qq_23452385/article/details/89285189）*
+> *参考（https://blog.csdn.net/qq_23452385/article/details/89285189）*
 ## 使用场景
 * 当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时。
 * 当构造过程必须允许被构造的对象有不同表示时。
@@ -80,3 +80,6 @@ Test:: message is BUILDER2
 ```
 ## 总结
 Builder 模式可以根据具体的需求，也可以把Builder 放到私有类中，这样更加直观的表现产品的构造。Builder 具有良好的封装性，使用Builder 模式可以让使用者不必知道构成的细节；而且也容易扩展。唯一不好的地方就是它会产生多余的Builder 对象（类爆炸），消耗内存。
+[DEMO](https://github.com/wdmxzf/java-example/tree/pattern/src/main/java/com/example/pattern/builder)
+
+*参考：《Android 源码设计模式解析与实践》* 
