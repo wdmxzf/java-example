@@ -23,6 +23,6 @@ public class Controller implements State {
     }
 
     public void method2() {
-        this.state.method1();
+        this.state.method2();
     }
 }
